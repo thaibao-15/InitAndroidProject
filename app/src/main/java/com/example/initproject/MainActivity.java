@@ -28,10 +28,17 @@ public class MainActivity extends AppCompatActivity {
         Button convertToC = findViewById(R.id.convertToC);
         Button btnKQ = findViewById(R.id.btnKQ);
 
-      
-
-
+        convertToF.setOnClickListener(v -> {
+            int celsius = Integer.parseInt(editTextC.getText().toString());
+            double fahrenheit = (celsius * 9 / 5) + 32;
+            editTextF.setText(String.valueOf(fahrenheit));
+        });
+        convertToC.setOnClickListener(v -> {
+            int fahrenheit = Integer.parseInt(editTextF.getText().toString());
+            double celsius = (fahrenheit - 32) * 5 / 9;
+            editTextC.setText(String.valueOf(celsius));
+        });
 
 
     }
-}
+    }
