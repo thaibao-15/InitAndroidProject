@@ -1,10 +1,16 @@
 package com.example.initproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+import android.window.OnBackInvokedDispatcher;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -42,5 +48,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        Button btnopen = findViewById(R.id.btnopen);
+        btnopen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this,ChildActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
-    }
+
+
+
+
+}
