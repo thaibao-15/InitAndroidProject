@@ -1,6 +1,8 @@
 package com.example.initproject;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        EditText editTextC = findViewById(R.id.editTextC);
+        EditText editTextF = findViewById(R.id.editTextF);
+        Button convertToF = findViewById(R.id.convertToF);
+        Button convertToC = findViewById(R.id.convertToC);
+        Button btnKQ = findViewById(R.id.btnKQ);
+
+      
+
+
+
+
     }
 }
