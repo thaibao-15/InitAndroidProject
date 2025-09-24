@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         Button convertToF = findViewById(R.id.convertToF);
         Button convertToC = findViewById(R.id.convertToC);
         Button btnKQ = findViewById(R.id.btnKQ);
+        EditText edtA =findViewById(R.id.edtA);
+        EditText edtB =findViewById(R.id.edtB);
 
         convertToF.setOnClickListener(v -> {
             editTextF.setText("");
@@ -55,6 +57,22 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent =new Intent(MainActivity.this,ChildActivity.class);
                 startActivity(intent);
             }
+        });
+
+        btnKQ.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this,ChildActivity.class);
+            int a = Integer.parseInt(edtA.getText().toString());
+            int b = Integer.parseInt(edtB.getText().toString());
+            Bundle bundle =new Bundle();
+            bundle.putInt("numberA",a);
+            bundle.putInt("numberB",b);
+
+            intent.putExtra("mypackage",bundle);
+
+
+            startActivity(intent);
+
+
         });
 
 

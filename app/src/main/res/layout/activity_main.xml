@@ -14,7 +14,7 @@
         android:backgroundTint="#F6F6F6"
         android:backgroundTintMode="add"
         android:baselineAligned="false"
-        android:foreground="@drawable/ic_launcher_foreground"
+
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="0dp">
@@ -74,19 +74,33 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btnopen"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Button" />
+
+        <EditText
+            android:id="@+id/edtA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/edtB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <Button
             android:id="@+id/btnKQ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#901919"
             android:rotationX="2"
             android:text="Result" />
-
-        <Button
-            android:id="@+id/btnopen"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_width="221dp"
-            android:layout_height="wrap_content"
-            android:text="Button" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

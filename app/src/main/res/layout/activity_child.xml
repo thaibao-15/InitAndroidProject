@@ -17,8 +17,18 @@
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_gravity="center"
-        android:layout_width="206dp"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="back " />
+
+    <TextView
+        android:id="@+id/textViewKQ"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:text="TextView" />
+
 </LinearLayout>
