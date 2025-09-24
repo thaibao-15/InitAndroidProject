@@ -10,9 +10,14 @@
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="match_parent"
+        android:background="#DCF0F4"
+        android:backgroundTint="#F6F6F6"
+        android:backgroundTintMode="add"
+        android:baselineAligned="false"
+        android:foreground="@drawable/ic_launcher_foreground"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/textView"
@@ -22,6 +27,8 @@
 
         <EditText
             android:id="@+id/editTextC"
+            android:background="@drawable/custom_editext"
+            android:backgroundTint="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -38,6 +45,8 @@
             android:id="@+id/editTextF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_editext"
+            android:backgroundTint="@null"
             android:ems="10"
             android:hint="Insert F"
             android:inputType="number" />
@@ -49,6 +58,8 @@
 
             <Button
                 android:id="@+id/convertToF"
+                android:background="@drawable/custom_button"
+                app:backgroundTint ="@null"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -66,6 +77,8 @@
             android:id="@+id/btnKQ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#901919"
+            android:rotationX="2"
             android:text="Result" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
