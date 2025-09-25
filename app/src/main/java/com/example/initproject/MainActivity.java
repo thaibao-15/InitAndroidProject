@@ -20,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     EditText edtKQ;
+    Button btnContact;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +84,13 @@ public class MainActivity extends AppCompatActivity {
 
             myIntent.putExtra("sog",g);
             startActivityForResult(myIntent,99);
+        });
+
+        btnContact =findViewById(R.id.btnContact);
+        btnContact.setOnClickListener(v -> {
+            Intent intent =new Intent(MainActivity.this,ContactActivity.class);
+            startActivity(intent);
+
         });
     }
 

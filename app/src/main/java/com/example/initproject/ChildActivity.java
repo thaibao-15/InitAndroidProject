@@ -57,8 +57,5 @@ public class ChildActivity extends AppCompatActivity {
             setResult(34,myIntent);
             finish();
         });
-
-
-
     }
 }

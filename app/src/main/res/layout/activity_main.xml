@@ -128,5 +128,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="gửi" />
+
+        <Button
+            android:id="@+id/btnContact"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:text="My Contact" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
