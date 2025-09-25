@@ -1,5 +1,6 @@
 package com.example.initproject;
 
+import android.app.ComponentCaller;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,13 +12,14 @@ import android.window.OnBackInvokedDispatcher;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
+    EditText edtKQ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,18 +70,32 @@ public class MainActivity extends AppCompatActivity {
             bundle.putInt("numberB",b);
 
             intent.putExtra("mypackage",bundle);
-
-
             startActivity(intent);
-
-
         });
+        //transfer và nhận lại
+        EditText edtg =findViewById(R.id.edtG);
 
+        Button btnGH =findViewById(R.id.btnGH);
 
+        btnGH.setOnClickListener(v -> {
+            Intent myIntent = new Intent(MainActivity.this,ChildActivity.class);
+            int g = Integer.parseInt(edtg.getText().toString());
 
+            myIntent.putExtra("sog",g);
+            startActivityForResult(myIntent,99);
+        });
     }
 
-
-
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        edtKQ =findViewById(R.id.edtH);
+        if(requestCode==99 && resultCode==33){
+            int kq =data.getIntExtra("kq",0);
+            edtKQ.setText(kq+"");
+        }else if(requestCode==99 && resultCode==34){
+            int kq =data.getIntExtra("kq",0);
+            edtKQ.setText(kq+"");
+        }
+    }
 }

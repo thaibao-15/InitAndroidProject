@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -29,13 +30,35 @@ public class ChildActivity extends AppCompatActivity {
             Intent intent = new Intent(ChildActivity.this,MainActivity.class);
             startActivity(intent);
         });
-        TextView textViewKQ ;
-        textViewKQ= findViewById(R.id.textViewKQ);
-        Intent intent = getIntent();
-        Bundle bundle= intent.getBundleExtra("mypackage");
-        int a =bundle.getInt("numberA");
-        int b =bundle.getInt("numberB");
-        textViewKQ.setText(a+b +"");
+//        TextView textViewKQ ;
+//        textViewKQ= findViewById(R.id.textViewKQ);
+//        Intent intent = getIntent();
+//        Bundle bundle= intent.getBundleExtra("mypackage");
+//        int a =bundle.getInt("numberA");
+//        int b =bundle.getInt("numberB");
+//        textViewKQ.setText(a+b +"");
+
+
+        EditText edtValue = findViewById(R.id.textValue);
+        Button btnNormal = findViewById(R.id.btnNormal);
+        Button btnDouble = findViewById(R.id.btnDouble);
+
+        Intent myIntent = getIntent();
+        int a = myIntent.getIntExtra("sog",0);
+        edtValue.setText(a+ "");
+
+        btnNormal.setOnClickListener(v -> {
+            myIntent.putExtra("kq",a);
+            setResult(33,myIntent);
+            finish();
+        });
+        btnDouble.setOnClickListener(v -> {
+            myIntent.putExtra("kq",a*a);
+            setResult(34,myIntent);
+            finish();
+        });
+
+
 
     }
 }
