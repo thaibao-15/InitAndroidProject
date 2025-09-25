@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ContactActivity extends AppCompatActivity {
 
-    Button btnCallPhone, btnSendSMS;
+    Button btnCallPhone, btnSendSMS, btnCamera;
     Intent intent;
 
     @Override
@@ -34,6 +34,12 @@ public class ContactActivity extends AppCompatActivity {
         });
         btnSendSMS.setOnClickListener(v -> {
             intent= new Intent(ContactActivity.this, MessageActivity.class);
+            startActivity(intent);
+        });
+
+        btnCamera= findViewById(R.id.btnCamera);
+        btnCamera.setOnClickListener(v -> {
+            intent = new Intent(ContactActivity.this,CameraActivity.class);
             startActivity(intent);
         });
     }
