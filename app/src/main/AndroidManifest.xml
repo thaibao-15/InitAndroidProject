@@ -10,9 +10,10 @@
         android:required="false" />
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.SEND_SMS"
+    <uses-permission
+        android:name="android.permission.SEND_SMS"
         tools:ignore="SmsAndCallLogPolicy" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -23,6 +24,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.InitProject">
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity
+            android:name=".MusicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BrowserActivity"
+            android:exported="false" />
         <activity
             android:name=".CameraActivity"
             android:exported="false" />
