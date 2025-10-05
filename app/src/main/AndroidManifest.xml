@@ -13,7 +13,9 @@
     <uses-permission
         android:name="android.permission.SEND_SMS"
         tools:ignore="SmsAndCallLogPolicy" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- cấp quyền cho đọc thông báo -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
 
     <application
         android:allowBackup="true"
@@ -24,10 +26,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.InitProject">
+        <activity
+            android:name=".ListViewBasicActivity"
+            android:exported="false" />
+        <!-- //nhận thông báo -->
+        <receiver
+            android:name=".MySmsReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".ReceiverMassageActivity"
+            android:exported="false" />
+
         <service
             android:name=".MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity
             android:name=".MusicActivity"

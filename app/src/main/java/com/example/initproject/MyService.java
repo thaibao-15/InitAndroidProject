@@ -19,12 +19,15 @@ public class MyService extends Service {
         super.onCreate();
         myMusic = MediaPlayer.create(MyService.this,R.raw.phep_mau);
         myMusic.setLooping(true);
-
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        myMusic.start();
+        if(myMusic.isPlaying()){
+            myMusic.pause();
+        }else {
+            myMusic.start();
+        }
         return super.onStartCommand(intent, flags, startId);
     }
 

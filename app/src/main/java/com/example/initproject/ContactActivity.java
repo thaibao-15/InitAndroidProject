@@ -1,5 +1,6 @@
 package com.example.initproject;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -12,9 +13,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ContactActivity extends AppCompatActivity {
 
-    Button btnCallPhone, btnSendSMS, btnCamera, btnBrowser, btnMusic;
+    Button btnCallPhone, btnSendSMS, btnCamera, btnBrowser, btnMusic, receiveSms;
     Intent intent;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,11 @@ public class ContactActivity extends AppCompatActivity {
         btnMusic = findViewById(R.id.btnMusic);
         btnMusic.setOnClickListener(v -> {
             intent = new Intent(ContactActivity.this, MusicActivity.class);
+            startActivity(intent);
+        });
+        receiveSms = findViewById(R.id.btnreceiveSms);
+        receiveSms.setOnClickListener(v -> {
+            Intent intent = new Intent(ContactActivity.this, ReceiverMassageActivity.class);
             startActivity(intent);
         });
     }

@@ -35,7 +35,7 @@ public class CallPhoneActivity extends AppCompatActivity {
         btnCall= findViewById(R.id.btnCall);
 
         btnCall.setOnClickListener(v -> {
-            Intent myIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel"+textPhoneNumber.getText().toString()));
+            Intent myIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel"+ textPhoneNumber.getText().toString()));
             // Kiểm tra quyền
             if (ActivityCompat.checkSelfPermission(CallPhoneActivity.this,
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {

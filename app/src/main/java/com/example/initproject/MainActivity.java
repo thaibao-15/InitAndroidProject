@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         Button convertToF = findViewById(R.id.convertToF);
         Button convertToC = findViewById(R.id.convertToC);
         Button btnKQ = findViewById(R.id.btnKQ);
-        EditText edtA =findViewById(R.id.edtA);
-        EditText edtB =findViewById(R.id.edtB);
+        EditText edtA = findViewById(R.id.edtA);
+        EditText edtB = findViewById(R.id.edtB);
 
         convertToF.setOnClickListener(v -> {
             editTextF.setText("");

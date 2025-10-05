@@ -35,6 +35,7 @@ public class CameraActivity extends AppCompatActivity {
         });
         imagePhoto = findViewById(R.id.imagePhoto);
         btnTakeAPhoto =findViewById(R.id.btnTakeAPhoto);
+
         btnTakeAPhoto.setOnClickListener(v -> {
             Intent intent = new Intent(ACTION_IMAGE_CAPTURE);
             // Kiểm tra quyền

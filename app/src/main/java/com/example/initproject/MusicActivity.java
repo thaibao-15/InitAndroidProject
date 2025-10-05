@@ -1,9 +1,7 @@
 package com.example.initproject;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -13,7 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MusicActivity extends AppCompatActivity {
-    ImageButton btnPlay, btnPause;
+    ImageButton btnPlay, btnStop;
+    Boolean flag;
 
 
     @Override
@@ -26,13 +25,22 @@ public class MusicActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btnPlay = findViewById(R.id.btnPlayMusic);
-        btnPause = findViewById(R.id.btnPauseMusic);
-        btnPlay.setOnClickListener(v -> {
+        btnPlay = findViewById(R.id.btnPlayMusic2);
+        btnStop = findViewById(R.id.btnPauseMusic);
+
+
+
+        btnStop.setOnClickListener(v -> {
             Intent intent = new Intent(MusicActivity.this, MyService.class);
             startService(intent);
+//            if(flag==true){
+//                btnPlay.setImageResource(R.drawable.isplay);
+//                flag= false;
+//            }else {
+//                btnPlay.setImageResource(R.drawable.ispause);
+//            }
         });
-        btnPause.setOnClickListener(v -> {
+        btnPlay.setOnClickListener(v -> {
             Intent intent = new Intent(MusicActivity.this, MyService.class);
             stopService(intent);
         });
