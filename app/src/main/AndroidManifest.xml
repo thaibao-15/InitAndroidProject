@@ -27,9 +27,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InitProject">
         <activity
-            android:name=".ListViewBasicActivity"
+            android:name=".GridViewBasic.SubGridViewActivity"
             android:exported="false" />
-        <!-- //nhận thông báo -->
+        <activity
+            android:name=".GridViewBasic.MainGridViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArrayAdapter.SubActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArrayAdapter.ListViewCustomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListViewBasicActivity"
+            android:exported="false" /> <!-- //nhận thông báo -->
         <receiver
             android:name=".MySmsReceiver"
             android:enabled="true"

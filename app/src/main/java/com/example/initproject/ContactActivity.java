@@ -11,9 +11,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.initproject.ArrayAdapter.ListViewCustomActivity;
+
 public class ContactActivity extends AppCompatActivity {
 
-    Button btnCallPhone, btnSendSMS, btnCamera, btnBrowser, btnMusic, receiveSms;
+    Button btnCallPhone, btnSendSMS, btnCamera, btnBrowser, btnMusic, receiveSms, btnListDT, btnListGirl;
     Intent intent;
 
     @SuppressLint("MissingInflatedId")
@@ -59,6 +61,16 @@ public class ContactActivity extends AppCompatActivity {
         receiveSms.setOnClickListener(v -> {
             Intent intent = new Intent(ContactActivity.this, ReceiverMassageActivity.class);
             startActivity(intent);
+        });
+        btnListDT = findViewById(R.id.bntDsDT);
+        btnListDT.setOnClickListener(v -> {
+            Intent intent1 = new Intent(ContactActivity.this, ListViewBasicActivity.class);
+            startActivity(intent1);
+        });
+        btnListGirl = findViewById(R.id.btnlistGirl);
+        btnListGirl.setOnClickListener(v -> {
+            Intent intent1 =new Intent(ContactActivity.this, ListViewCustomActivity.class);
+            startActivity(intent1);
         });
     }
 }

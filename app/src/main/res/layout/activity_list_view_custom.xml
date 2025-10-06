@@ -6,16 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ListViewBasicActivity">
-
-    <TextView
-        android:id="@+id/textViewDT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+    app:layoutDescription="@xml/activity_list_view_custom_scene"
+    tools:context=".ArrayAdapter.ListViewCustomActivity">
 
     <ListView
-        android:id="@+id/ListViewDT"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:id="@+id/listViewCustom"
+        android:layout_width="409dp"
+        android:layout_height="729dp" />
 </LinearLayout>
